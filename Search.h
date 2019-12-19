@@ -191,14 +191,14 @@ public:
 	void OnCommand( HWND /*hwndView*/ )
 	{
 		if( m_hDlg == NULL ){
-			TCHAR sz[260];
+			//TCHAR sz[260];
 			TCHAR szAppName[80];
 			LoadString( EEGetLocaleInstanceHandle(), IDS_SEARCH_MENU_TEXT, szAppName, _countof( szAppName ) );
-			if( Editor_GetVersion( m_hWnd ) < 8000 ){
-				LoadString( EEGetLocaleInstanceHandle(), IDS_INVALID_VERSION, sz, _countof( sz ) );
-				MessageBox( m_hWnd, sz, szAppName, MB_OK | MB_ICONSTOP );
-				return;
-			}
+			//if( Editor_GetVersion( m_hWnd ) < 8000 ){
+			//	LoadString( EEGetLocaleInstanceHandle(), IDS_INVALID_VERSION, sz, _countof( sz ) );
+			//	MessageBox( m_hWnd, sz, szAppName, MB_OK | MB_ICONSTOP );
+			//	return;
+			//}
 			m_hDlg = CreateDialog( EEGetLocaleInstanceHandle(), MAKEINTRESOURCE( IDD_SEARCH ), m_hWnd, SearchProc );
 
 			if( m_hDlg != NULL ){
