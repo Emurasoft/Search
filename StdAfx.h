@@ -8,7 +8,6 @@
 
 #include <windows.h>
 #include <windowsx.h>
-#include <tchar.h>
 #include <malloc.h>
 #include <crtdbg.h>
 #include <commctrl.h>
@@ -32,10 +31,10 @@ using namespace std;
 
 #ifdef _DEBUG
 #define TRACE	AfxTrace
-inline void __cdecl AfxTrace(LPCTSTR lpszFormat, ...)
+inline void __cdecl AfxTrace(LPCWSTR lpszFormat, ...)
 {
 	int nBuf;
-	TCHAR szBuffer[512];
+	WCHAR szBuffer[512];
 	va_list args;
 	va_start(args, lpszFormat);
 	nBuf = StringCchVPrintf( szBuffer, _countof( szBuffer ), lpszFormat, args );
